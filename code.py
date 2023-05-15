@@ -7,7 +7,7 @@ import busio
 from adafruit_bme280 import basic as adafruit_bme280
 
 # Create sensor object, using the board's default I2C bus.
-i2c = busio.I2C(board.GP1, board.GP0)  # SCL, SDA
+i2c = busio.I2C(board.GP11, board.GP10)  # SCL, SDA
 bme280 = adafruit_bme280.Adafruit_BME280_I2C(i2c)
 
 # OR create sensor object, using the board's default SPI bus.
@@ -16,7 +16,7 @@ bme280 = adafruit_bme280.Adafruit_BME280_I2C(i2c)
 # bme280 = adafruit_bme280.Adafruit_BME280_SPI(spi, bme_cs)
 
 # change this to match the location's pressure (hPa) at sea level
-bme280.sea_level_pressure = 1013.25
+bme280.sea_level_pressure = 1018.1
 
 while True:
     print("\nTemperature: %0.1f C" % bme280.temperature)
